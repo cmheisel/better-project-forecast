@@ -8,6 +8,12 @@ class Results(object):
         self.results = results
 
     def percentile(self, pct):
+        """What's the Xth percentile of the results.
+        Arguments:
+            pct(float): The percentile you'd like returned. Example: 50.0 == 50th percentile.
+        Returns:
+            int: The value from the results that that is at the percentile requested.
+        """
         return int(round(percentile(self.results, pct)))
 
 

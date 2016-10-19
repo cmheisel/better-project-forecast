@@ -24,4 +24,4 @@ def test_results_percentile(mut):
         10
     ])
 
-    assert r.percentile(50) == 6
+    assert r.percentile(50.0) == 6
