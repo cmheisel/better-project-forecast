@@ -42,5 +42,4 @@ def test_forecast_sanity(mut):
 
     result = mut.Forecaster().forecast(throughputs, backlog_size, seed=1)
 
-    print(result.results)
     assert result.percentile(50.0) == 5
