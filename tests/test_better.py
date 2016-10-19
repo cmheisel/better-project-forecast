@@ -43,3 +43,17 @@ def test_forecast_sanity(mut):
     result = mut.Forecaster().forecast(throughputs, backlog_size, seed=1)
 
     assert result.percentile(50.0) == 5
+
+
+def test_forecast_with_backtest(mut):
+    """With a known set of throughputs and a known backlog, we should get the result we expect."""
+    throughputs = [
+        14, 13, 1, 2, 12, 13, 7, 14
+    ]
+    backlog_size = sum(throughputs)
+
+    result = mut.Forecaster().forecast(throughputs, backlog_size, seed=1)
+    assert result.percentile(50.0) == 8
+    assert result.percentile(75.0) == 10
+    assert result.percentile(85.0) == 10
+    assert result.percentile(95.0) == 12
