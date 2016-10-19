@@ -19,4 +19,4 @@ clean:
 
 .PHONY: test
 test: $(setup)
-	$(pytest) --cov=better --pep8 tests/
+	$(pytest) --cov=better --flake8 tests/
