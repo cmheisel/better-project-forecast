@@ -10,11 +10,13 @@ class Results(object):
     def percentile(self, pct):
         """What's the Xth percentile of the results.
         Arguments:
-            pct(float): The percentile you'd like returned. Example: 50.0 == 50th percentile.
+            pct(float): The percentile you'd like returned.
+                Percentile to compute, which must be between 0 and 100 inclusive.
+                Example: 50.0 == 50th percentile.
         Returns:
             int: The value from the results that that is at the percentile requested.
         """
-        return int(round(percentile(self.results, pct)))
+        return percentile(self.results, pct, interpolation='nearest')
 
 
 class Forecaster(object):
@@ -35,7 +37,7 @@ class Forecaster(object):
 
         for i in range(0, num_simulations):
             simulated_backlog = backlog_size
-            time_unit_count = 1
+            time_unit_count = 0
             while simulated_backlog > 0:
                 simulated_backlog -= random.choice(throughputs)
                 time_unit_count += 1
