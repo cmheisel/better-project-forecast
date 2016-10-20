@@ -14,7 +14,7 @@ deploy:
     server: https://testpypi.python.org/pypi
     user: "cmheisel"
     password:
-  secure: "CBHlOYR2ma7Zf8g5jZeTA9QfUpPPM4fOjlTcHq64RRhdTpXHFEH/+ki1CPEwi8cB1jOFrds/fJ7L95ftBXN6O7eITCrHlj1Iu8u49jl6YawiGQ7GUvlYSD+zp
+      secure: "CBHlOYR2ma7Zf8g5jZeTA9QfUpPPM4fOjlTcHq64RRhdTpXHFEH/+ki1CPEwi8cB1jOFrds/fJ7L95ftBXN6O7eITCrHlj1Iu8u49jl6YawiGQ7GUvlYSD+zp
 piZzt1VqXA9iMLZt8QF/MmyKFuFeqtROBp6i+W8aTwsXm1OLOOt3UDZuWE4j5Fis64BnXKPgeusGwpBXOEOD+RRk3f3uUmty2uXlkZycwHak5lrQM16keGi0ClZYgSFd4I0X
 z9GDAQ5B3AstEihHEzqg1BJ2JYV8d1mDfOhE6Wfrj+wguayHoKa0Qb9BcSl85x5ij1hGJypfS74yPyE6ZIbGcJ3xRRlMVIgBuLour4DIG44+YhYH4pUb5BOo+7lk3LnmR8/j
 oTcDUvLqSDD4shO4BGj5t3u+nQMBJvY88Iya8W7A8JLcmwVm/6b6fjKyDFb5jSK2OhV6/SPqpQW+29RT5Oro2ufWPJCMZtpYGUAgLJYPfv82Tu0N5zgLk+qCvay4CkH2V7VA
