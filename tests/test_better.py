@@ -57,3 +57,31 @@ def test_forecast_with_backtest(mut):
     assert result.percentile(75.0) == 10
     assert result.percentile(85.0) == 10
     assert result.percentile(95.0) == 12
+
+
+def test_forecast_with_backtest_fewer_iters(mut):
+    """With a known set of throughputs and a known backlog, we should get the result we expect."""
+    throughputs = [
+        14, 13, 1, 2, 12, 13, 7, 14
+    ]
+    backlog_size = sum(throughputs)
+
+    result = mut.Forecaster().forecast(throughputs, backlog_size, num_simulations=10, seed=1)
+    assert result.percentile(50.0) == 8
+    assert result.percentile(75.0) == 9
+    assert result.percentile(85.0) == 9
+    assert result.percentile(95.0) == 11
+
+
+def test_forecast_with_backtest_more_iters(mut):
+    """With a known set of throughputs and a known backlog, we should get the result we expect."""
+    throughputs = [
+        14, 13, 1, 2, 12, 13, 7, 14
+    ]
+    backlog_size = sum(throughputs)
+
+    result = mut.Forecaster().forecast(throughputs, backlog_size, num_simulations=50000, seed=1)
+    assert result.percentile(50.0) == 8
+    assert result.percentile(75.0) == 10
+    assert result.percentile(85.0) == 10
+    assert result.percentile(95.0) == 12
