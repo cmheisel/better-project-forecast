@@ -11,7 +11,7 @@ def read(fname):
 
 setup(
     name = "better-project-forecast",
-    version = "0.0.4",
+    version = "0.0.5",
     author = "Chris Heisel",
     author_email = "chris@heisel.org",
     description = ("Predict how long projects will take using monte carlo simulation"),

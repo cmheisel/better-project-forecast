@@ -25,7 +25,7 @@ test: $(setup)
 
 .PHONY: test_sdist
 test_sdist: clean
-	python setup.py sdist
+	python setup.py sdist bdist_wheel
 	virtualenv ./sdist-venv
 	./sdist-venv/bin/pip install ./dist/*.tar.gz
 	./sdist-venv/bin/python setup.py test
