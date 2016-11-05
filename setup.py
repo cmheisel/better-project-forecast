@@ -11,7 +11,7 @@ def read(fname):
 
 setup(
     name = "better-project-forecast",
-    version = "0.0.3",
+    version = "0.0.4",
     author = "Chris Heisel",
     author_email = "chris@heisel.org",
     description = ("Predict how long projects will take using monte carlo simulation"),
@@ -20,6 +20,9 @@ setup(
     url = "https://github.com/cmheisel/better-project-forecast",
     packages=['better', 'tests'],
     long_description=read('README.md'),
+    install_requires=["numpy==1.11.2", ],
+    setup_requires=['pytest-runner==2.9', ],
+    tests_require=['pytest==3.0.3', "pytest-flake8==0.8.1"],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",

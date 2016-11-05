@@ -28,4 +28,5 @@ test_sdist: clean
 	python setup.py sdist
 	virtualenv ./sdist-venv
 	./sdist-venv/bin/pip install ./dist/*.tar.gz
+	./sdist-venv/bin/python setup.py test
 	./sdist-venv/bin/python -c "import better; assert better"
