@@ -85,3 +85,26 @@ def test_forecast_with_backtest_more_iters(mut):
     assert result.percentile(75.0) == 10
     assert result.percentile(85.0) == 10
     assert result.percentile(95.0) == 12
+
+
+def test_no_solutions_zeros(mut):
+    """If the throughputs provided would never decrement the backlog, error."""
+    throughputs = [
+        0, 0, 0, 0, 0, -1, -2
+    ]
+    backlog_size = 10
+
+    with pytest.raises(ValueError):
+        mut.Forecaster().forecast(throughputs, backlog_size, seed=1)
+
+
+def test_no_solutions_max_iterations(mut):
+    """If the throughputs provided would never decrement the backlog, error."""
+    throughputs = [1, 2, 3]
+    all_balls = [0 for i in range(0, 500)]
+    throughputs = throughputs + all_balls
+    backlog_size = 10
+
+    with pytest.raises(ValueError):
+        result = mut.Forecaster().forecast(throughputs, backlog_size, max_periods=365, seed=1)
+        print(result.percentile(95.0))
